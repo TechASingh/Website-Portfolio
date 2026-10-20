@@ -1,0 +1,290 @@
+ /* COLOUR PALETTE  */
+:root {
+    --navbarColor: #243f68;
+    --headingColor: #172b4d;
+    --textColor: #263449;
+    --pageColor: #f7f5ef;
+    --cardColor: #ffffff;
+    --imageCardColor: #eaf0f7;
+    --buttonColor: #287c78;
+    --highlightColor: #d5ad60;
+}
+
+/* GENERAL STYLES  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--pageColor);
+    color: var(--textColor);
+    line-height: 1.7;
+}
+
+/* NAVBAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--navbarColor);
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    /* white-space: nowrap; */
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: var(--highlightColor);
+}
+
+/* INTRO SECTION */
+.intro {
+      padding: 60px 20px;
+    background-color: var(--headingColor);
+    color: white;
+    text-align: center;
+}
+
+.intro h1 {
+     font-size: 36px;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease both;
+}
+
+.intro p {
+    font-size: 20px;
+    animation: fadeIn 1.5s ease both;
+}
+
+.intro span {
+    color: var(--highlightColor);
+}
+
+/* SECTION HEADINGS */
+.section-heading {
+    text-align: center;
+    padding: 45px 20px 25px;
+}
+
+.section-heading h2 {
+    color: var(--headingColor);
+    font-size: 30px;
+    animation: fadeIn 1s ease both;
+}
+
+.section-heading p {
+    margin-top: 8px;
+}
+
+/*  IMAGE AND TEXT CARDS */
+.card {
+     display: flex;
+    align-items: stretch;
+    margin: 25px 5%;
+    background-color: var(--cardColor);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-image, .card-content {
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-image {
+    background-color: var(--imageCardColor);
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    max-width: 520px;
+    height: 290px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+    transition: transform 0.6s ease, box-shadow 0.4s ease;
+}
+
+.card-image img:hover {
+    transform: perspective(800px) rotateY(8deg) rotateZ(-1deg) scale(1.04);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+}
+
+.card-content {
+    background-color: white;
+    animation: fadeIn 1.1s ease both;
+}
+
+.card-content h2 {
+    color: var(--headingColor);
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+.card-content p {
+    max-width: 480px;
+    margin-bottom: 16px;
+}
+
+/* Alternating cards */
+.card.reverse .card-image {
+    order: 2;
+}
+
+.card.reverse .card-content {
+    order: 1;
+    background-color: var(--imageCardColor);
+}
+
+
+/* FEATURED PROJECT CARD  */
+.featured-project {
+    width: min(90%, 760px);
+    margin: 25px auto 45px;
+    padding: 45px 35px;
+    border-radius: 14px;
+    background-color: var(--imageCardColor);
+    box-shadow: 0 8px 25px rgba(23, 43, 77, 0.09);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 1.1s ease both;
+}
+
+.featured-project h2 {
+    color: var(--headingColor);
+    margin-bottom: 18px;
+}
+
+.featured-project p {
+    max-width: 560px;
+    margin-bottom: 16px;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    background-color: var(--buttonColor);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid var(--buttonColor);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--navbarColor);
+}
+
+/* CONTACT FORM */
+.contact-card {
+    background-color: white;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 460px;
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c5d2cf;
+    border-radius: 6px;
+    font: inherit;
+    background-color: white;
+}
+
+/* Focus border matches the navbar */
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: 2px solid var(--navbarColor);
+    box-shadow: 0 0 0 3px rgba(36, 63, 104, 0.15);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.contact-form .btn {
+    width: 100%;
+    font-size: 15px;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--headingColor);
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 45px;
+}
+
+footer a {
+    color: var(--highlightColor);
+    text-decoration: none;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

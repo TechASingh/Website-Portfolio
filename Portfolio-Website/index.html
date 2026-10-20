@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Developer Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="#home" class="logo">My Portfolio</a>
+        <ul class="nav-links">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">My Projects</a></li>
+            <li>
+                <a href="https://github.com/TechASingh/HTML-and-CSS-Projects" target="_blank">GitHub</a>
+            </li>
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
+    </nav>
+    <!-- HEADER -->
+    <header class="intro" id="home">
+        <h1>Hello, I'm Aashima Singh!</h1>
+        <p>Developer, problem-solver, and lifelong learner.</p>
+    </header>
+    <!-- ABOUT ME -->
+    <section id="about">
+        <div class="section-heading">
+            <h2>Get to Know Me</h2>
+            <p>A little introduction to who I am and what I do.</p>
+        </div>
+        <div class="card">
+            <div class="card-image">
+                <img src="images/Laptop1.png" alt="Laptop Image">
+            </div>
+            <div class="card-content">
+                <h2>About Me</h2>
+                <p>Welcome to my portfolio! I'm a passionate learner who enjoys building websites and exploring new ideas.</p>
+                <p>I love solving problems, creating useful projects, and continuously improving my skills.</p>
+                <p>When I'm not learning, you can usually find me reading a good book or working on a creative idea.</p>
+                <a href="#projects" class="btn">Explore My Work</a>
+            </div>
+        </div>
+    </section>
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="section-heading">
+            <h2>My Projects</h2>
+            <p>A selection of projects I'm learning and building with.</p>
+        </div>
+        <!-- Row 1: white text card -->
+        <div class="card">
+            <div class="card-image">
+                <img src="images/Laptop2.png" alt="Laptop Image 2">
+            </div>
+            <div class="card-content">
+                <h2>Explore My GitHub</h2>
+                <p>Check out my projects, experiments, and progress as I develop my web development skills.</p>
+                <p>Each project is another step forward in my learning journey.</p>
+                <a href="https://github.com/TechASingh/HTML-and-CSS-Projects" target="_blank" class="btn">View My Projects</a>
+            </div>
+        </div>
+        <!-- Featured project: one centered card without an image -->
+        <div class="featured-project">
+            <h2>Featured Project</h2>
+            <p>My first project with HTML and CSS.</p>
+            <p>All the exercises and one page websites I created while learning.</p>
+            <a href="https://github.com/TechASingh/HTML-and-CSS-Projects" target="_blank" class="btn">View Project</a>
+        </div>
+    </section>
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="section-heading">
+            <h2>Let's Connect</h2>
+            <p>Have a question or want to collaborate? Get in touch.</p>
+        </div>
+        <div class="card contact-card">
+            <div class="card-image">
+                <img src="images/EmailImage.jpg" alt="Email Image">
+            </div>
+            <div class="card-content">
+                <h2>Contact Me</h2>
+                <form class="contact-form" action="#" method="post">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="What would you like to discuss?" required>
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 TechASingh</p>
+        <p><a href="#home">Back to Top ↑</a></p>
+    </footer>
+</body>
+</html>
