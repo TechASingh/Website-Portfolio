@@ -10,19 +10,24 @@
     <!-- NAVBAR -->
     <nav class="navbar">
         <a href="#home" class="logo">My Portfolio</a>
-        <ul class="nav-links">
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
             <li><a href="#about">About Me</a></li>
             <li><a href="#projects">My Projects</a></li>
-            <li>
-                <a href="https://github.com/TechASingh/HTML-and-CSS-Projects" target="_blank">GitHub</a>
-            </li>
+            <li><a href="https://github.com/TechASingh/HTML-and-CSS-Projects" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             <li><a href="#contact">Contact Me</a></li>
         </ul>
     </nav>
     <!-- HEADER -->
     <header class="intro" id="home">
-        <h1>Hello, I'm Aashima Singh!</h1>
+        <p class="intro-label">WELCOME TO MY PORTFOLIO</p>
+        <h1>Hello, I'm <span>Aashima Singh</span>!</h1>
         <p>Developer, problem-solver, and lifelong learner.</p>
+        <a href="#projects" class="btn intro-button">Explore My Work</a>
     </header>
     <!-- ABOUT ME -->
     <section id="about">
@@ -32,7 +37,7 @@
         </div>
         <div class="card">
             <div class="card-image">
-                <img src="images/Laptop1.png" alt="Laptop Image">
+                <img src="images/Laptop1.png" alt="Laptop on a desk">
             </div>
             <div class="card-content">
                 <h2>About Me</h2>
@@ -49,56 +54,109 @@
             <h2>My Projects</h2>
             <p>A selection of projects I'm learning and building with.</p>
         </div>
-        <!-- Row 1: white text card -->
         <div class="card">
             <div class="card-image">
-                <img src="images/Laptop2.png" alt="Laptop Image 2">
+                <img src="images/Laptop2.png" alt="Laptop displaying a project">
             </div>
             <div class="card-content">
                 <h2>Explore My GitHub</h2>
                 <p>Check out my projects, experiments, and progress as I develop my web development skills.</p>
                 <p>Each project is another step forward in my learning journey.</p>
-                <a href="https://github.com/TechASingh/HTML-and-CSS-Projects" target="_blank" class="btn">View My Projects</a>
+                <a href="https://github.com/TechASingh/HTML-and-CSS-Projects" target="_blank" rel="noopener noreferrer" class="btn">View My Projects</a>
             </div>
         </div>
-        <!-- Featured project: one centered card without an image -->
         <div class="featured-project">
             <h2>Featured Project</h2>
             <p>My first project with HTML and CSS.</p>
-            <p>All the exercises and one page websites I created while learning.</p>
-            <a href="https://github.com/TechASingh/HTML-and-CSS-Projects" target="_blank" class="btn">View Project</a>
+            <p>All the exercises and one-page websites I created while learning.</p>
+            <a href="https://github.com/TechASingh/HTML-and-CSS-Projects" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
         </div>
     </section>
-    <!-- CONTACT -->
-    <section id="contact">
+    <!-- IMAGE GALLERY -->
+    <section id="gallery">
         <div class="section-heading">
-            <h2>Let's Connect</h2>
-            <p>Have a question or want to collaborate? Get in touch.</p>
+            <h2>Project Gallery</h2>
+            <p>A few snapshots of projects and ideas. Select an image to view the slideshow.</p>
         </div>
-        <div class="card contact-card">
-            <div class="card-image">
-                <img src="images/EmailImage.jpg" alt="Email Image">
-            </div>
-            <div class="card-content">
-                <h2>Contact Me</h2>
-                <form class="contact-form" action="#" method="post">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" placeholder="What would you like to discuss?" required>
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-            </div>
+        <div class="gallery-grid">
+            <button class="gallery-image" type="button" aria-label="Open gallery image 1">
+                <img src="images/Book_Tracker.png" alt="Book Tracker project image">
+            </button>
+            <button class="gallery-image" type="button" aria-label="Open gallery image 2">
+                <img src="images/Cinema.png" alt="Academy Cinemas project image">
+            </button>
+            <button class="gallery-image" type="button" aria-label="Open gallery image 3">
+                <img src="images/Recipe_Blog.png" alt="Recipe Blog project image">
+            </button>
+            <button class="gallery-image" type="button" aria-label="Open gallery image 4">
+                <img src="images/Travel_Blog.png" alt="Travel Blog project image">
+            </button>
         </div>
     </section>
+    <!-- LIGHTBOX SLIDESHOW -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Image slideshow">
+            <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close slideshow">&times;</button>
+            <button class="slide-arrow previous-slide" id="previousSlide" type="button" aria-label="Previous image">&#10094;</button>
+            <div class="lightbox-main">
+                <img id="lightboxImage" src="" alt="">
+                <p id="imageCaption"></p>
+            </div>
+            <button class="slide-arrow next-slide" id="nextSlide" type="button" aria-label="Next image">&#10095;</button>
+            <div class="thumbnail-list" id="thumbnailList">
+                <button type="button" class="thumbnail active" data-index="0" aria-label="Show image 1">
+                    <img src="images/Book_Tracker.png" alt="Book Tracker Thumbnail">
+                </button>
+                <button type="button" class="thumbnail" data-index="1" aria-label="Show image 2">
+                    <img src="images/Cinema.png" alt="Academy Cinemas Thumbnail">
+                </button>
+                <button type="button" class="thumbnail" data-index="2" aria-label="Show image 3">
+                    <img src="images/Recipe_Blog.png" alt="Recipe Blog Thumbnail">
+                </button>
+                <button type="button" class="thumbnail" data-index="3" aria-label="Show image 4">
+                    <img src="images/Travel_Blog.png" alt="Travel Blog Thumbnail">
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- CONTACT CALL TO ACTION -->
+    <section id="contact">
+        <div class="contact-callout">
+            <p class="intro-label">HAVE A PROJECT IN MIND?</p>
+            <h2>Let's Connect</h2>
+            <p>Have a question or want to collaborate? I'd love to hear from you.</p>
+            <button class="btn contact-open-button" id="openContact" type="button">Contact Me</button>
+        </div>
+    </section>
+    <!-- CONTACT FORM MODAL -->
+    <div class="contact-modal" id="contactModal" aria-hidden="true">
+        <div class="contact-modal-content" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+            <button class="modal-close" id="closeContact" type="button" aria-label="Close contact form">&times;</button>
+            <h2 id="contactTitle">Send Me a Message</h2>
+            <p class="form-intro">Fill out the form below and let's start a conversation.</p>
+            <form class="contact-form" id="contactForm">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="What would you like to discuss?" required>
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+                <button type="submit" class="btn">Send Message</button>
+                <p class="form-feedback" id="formFeedback" aria-live="polite"></p>
+            </form>
+        </div>
+    </div>
     <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 TechASingh</p>
         <p><a href="#home">Back to Top ↑</a></p>
     </footer>
+    <script src="JS/main.js"></script>
 </body>
 </html>
